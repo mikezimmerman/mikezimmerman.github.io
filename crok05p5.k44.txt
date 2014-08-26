@@ -1,0 +1,21 @@
+﻿Revert "added Index page."
+
+This reverts commit dab8bba32369d2b56f8fd6071976a472432ee95c.
+
+Conflicts:
+	index.html
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# You are currently reverting commit dab8bba.
+#
+# Changes to be committed:
+#	deleted:    images/uc.gif
+#
+# Changes not staged for commit:
+#	deleted:    index.html
+#
+
