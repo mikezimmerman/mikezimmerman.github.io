@@ -1,0 +1,512 @@
+/*********************************************
+		Tag Resets and Normalizations.
+**********************************************/
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+object,
+section
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+img
+{
+	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	font-weight: 100;
+}
+
+section footer
+{
+	clear: both;
+}
+
+
+/****************************************
+		impose a Vertical Rhythm.
+*****************************************/
+
+/* establishing a baseline of 16/16. */
+
+html
+{
+	height: 100%;
+	font-family: sans-serif;
+	font-size: 100%;				/* http://filamentgroup.com/lab/how_we_learned_to_leave_body_font_size_alone/ */
+	line-height: 1;					/* http://meyerweb.com/eric/thoughts/2008/05/06/line-height-abnormal/ */
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;		/* https://developer.mozilla.org/en-US/docs/CSS/text-size-adjust */
+	-webkit-text-size-adjust: 100%;
+}
+
+/* calculations on my scaled baseline. */
+
+/* my original sizing choices made by eye: 
+p
+{
+	font-size: 24px;	[ 24 / 16 = 1.5 ]
+	line-height: 36px;	[ 36 / 24 = 1.5 ]
+}
+
+therefore, the scale is 1.5 x 1.5 =	2.25	: 100%
+									1.6875	:  75%
+									1.125	:  50%
+									0.5625	:  25%
+*/
+
+p, li, h3
+{
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+
+h1
+{
+	/*font-size: 3.6875em;*/
+	/*line-height: 1.2203389830508474576271186440678;	// ( 72px / 16px ) / this f-s.*/
+
+	/*font-size: 3em;*/
+	/*line-height: 1.5;*/	/* ( 72px / 16px ) / this f-s. */
+
+	font-size: 3.375em;								/* 100% scale * <p> f-s */
+	line-height: 1.3333333333333333333333333333333;	/* ( 100% scale * 2 [ because this f-s is larger than 1 baseline, therefore it must consume 2 baselines ] ) / this f-s.*/
+}
+
+h2
+{
+	font-size: 4.5em;
+	line-height: 1;		/* ( 72px / 16px ) / this f-s. */
+}
+
+h4, #footer p
+{
+	font-size: 1.25em;
+	line-height: 1.8025; /* (note, i found it impossible figure out a calc. that successfully worked here! so, i just came up w/ this number through trial & error.) */
+}
+
+h5
+{
+	font-size: 1em;
+	line-height: 2.25;	/* == <p> line-height / ( this font-size / <p> font-size ) [ == 1.5 / ( 1 / 1.5 ) = 2.25 ] */
+	white-space: nowrap;
+}
+
+
+/**************************************
+		reg. formatting styles.
+***************************************/
+
+/* <!-- fundamental body styles. --> */
+
+body
+{
+	min-height: 100%;
+	font-family: Glober, "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+	background-color: #58644b; /* (note, s.a. Footer section.) */
+}
+
+/* <!-- classes, and other multi-section- and non-section-specific styles. --> */
+
+button img,
+button p
+{
+	display: inline;
+}
+
+.wrapper
+{
+	padding: 0 0.5625em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.box
+{
+	padding: 0 1.125em;
+}
+.box h4
+{
+	margin-bottom: 0.90125em;
+}
+.box ul
+{
+	list-style: none;
+	padding: 0;
+}
+
+.hidden
+{
+	display: none;
+}
+
+#nav, #header, #footer
+{
+	margin: 0 1.125em;
+}
+	#nav
+	{
+		margin-right: 0;
+	}
+
+/* <!-- font assignment. --> */
+
+p, #expertise li
+{
+	font-family: MuseoSans;
+}
+
+h1,
+h2,
+h3,
+h5,
+h6
+{
+	font-family: Mangerica;
+}
+h4
+{
+	font-family: MuseoSlabItalic;
+}
+
+
+/***************************************
+		content-specific styles.
+****************************************/
+
+/* <!-- Navigation, top --> */
+
+#container-nav
+{
+	color: #58644b;
+	background-color: #959a7c;
+}
+
+#nav
+{
+	padding: 0;
+}
+
+#nav h3
+{
+	display: inline;
+	line-height: 2.25;
+	white-space: nowrap;
+}
+
+#nav-buttons
+{
+	display: inline;
+	float: right;
+	white-space: nowrap;
+}
+
+#nav button
+{
+	display: inline;
+	padding: 0 1.125em;
+	background-color: transparent;
+	border: 0;
+}
+	#nav button:hover
+	{
+		background-color: #aaaf91;
+	}
+
+
+/* <!-- Header --> */
+
+#container-header
+{
+	width: 100%;
+	padding: 1.125em 0;
+	color: #af71b0;
+	background-color: #f4cf5f;
+}
+	#header h1
+	{
+		font-family: Choplin;
+	}
+	#header h2
+	{
+		font-weight: 900;
+		font-family: MuseoSlab;
+	}
+
+
+/* <!-- Main "Body" --> */
+
+#examples, #expertise
+{
+	padding: 1.125em 1.6875em;
+}
+
+#examples
+{
+	color: #ff5769;
+	background-color: #af71b0;
+}
+	#examples .reversal
+	{
+		background-color: #ff5769;
+		color: #af71b0;
+	}
+
+#examples button
+{
+	height: 2.25em;
+	margin-bottom:1.125em;
+	background-color: transparent;
+	border: 0;
+	white-space: nowrap;
+}
+	#examples button:hover
+	{
+		background-color: #a01b5b;
+		color: #af71b0;
+	}
+
+#expertise
+{
+	color: #0074ad;
+	background-color: #a69daf;
+}
+	#expertise .reversal
+	{
+		color: #a69daf;
+		background-color: #0074ad;
+	}
+	#expertise .dimmed h4
+	{
+		color: #a69daf;
+		background-color: #71788b;
+	}
+	#expertise .dimmed ul
+	{
+		margin-bottom:1.13em;
+		color: #71788b;
+	}
+
+#content header
+{
+	margin-bottom: 1.13em;
+}
+
+#content header h3 /* (so that my nav-helper tooltips "float" next to the sect.-title text) */
+{
+	display: inline;
+}
+
+#content article
+{
+	float: left;
+}
+
+
+/* <!-- Footer | Navigation, bottom --> */
+
+#container-footer
+{
+	clear: both;
+	color: #959a7c;
+	background-color: #58644b;
+}
+
+#footer p
+{
+	display: inline;
+	font-family: Choplin;
+}
+
+#footer h3
+{
+	float:right;
+	display: inline;
+}
+
+#footer h5
+{
+	display: inline;
+	line-height: 2.23;
+}
+
+
+/*******************************************************
+		my "tooltip" floating nav. helper boxes.
+********************************************************/
+
+.tooltip
+{
+	position: absolute;
+	display: none; /*inline*/
+
+	max-width: 280px;
+	min-width: 50px;
+
+	margin-left: 0.5625em;
+	padding: 1px;
+
+	font-family: MuseoSlabItalic;
+	font-size:14px;
+	line-height: 20px;
+
+	color: #000;
+	background-color: #ffffff;
+
+	border: 1px solid #ccc;
+	border: 1px solid rgba( 0, 0, 0, 0.2 );
+
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+	-webkit-box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
+	-moz-box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
+	box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
+
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.ttip-content
+{
+	position: relative;
+	padding: 9px 14px;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+
+
+/*******************************
+		for fluid media.
+********************************/
+
+figure
+{
+	position: relative;
+}
+
+figure img,
+figure object,
+figure embed,
+figure video
+{
+	display: block;
+	max-width: 100%; 
+}
+
+img
+{
+	border: 0;
+	-ms-interpolation-mode: bicubic; /* http://css-tricks.com/ie-fix-bicubic-scaling-for-images/ */
+}
+
+
+/************************************
+		IE 8 and below fixes.
+*************************************/
+
+/* figures, images */
+
+.ie #examples figure
+{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* "*" hack applies only to IE7 and below */
+
+.ie #examples figure
+{
+	*width: auto;
+}
+
+/* Navigation */
+
+/* IE8 .checked class for checkbox.js */
+
+#nav input[type=checkbox].checked ~ nav
+{
+	height: auto;
+	overflow: visible;  
+}
+
+/* Always show nav, IE7 and below */
+
+.ie #nav nav
+{
+	*height: auto;
+	*overflow: visible;  
+}
+
+/* Hide navicon, IE7 and below */
+
+.ie #nav label
+{
+	*background: none;
+}
+	
+/* box-sizing polyfill, IE7 and below */
+
+.ie .wrapper,
+.ie .name,
+.ie .email,
+.ie input,
+.ie textarea
+{
+	*behavior: url( "http://mikezimmerman.github.io/scripts/boxsizing.htc" );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
