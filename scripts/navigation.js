@@ -14,7 +14,7 @@ $( document ).ready(
 
 						function( e )
 						{
-							$( this ).children( "img" ).attr( "src", "./images/link-pw.png" );
+							$( this ).children( "img" ).attr( "src", "./images/link-pw.gif" );
 						}
 					);
 
@@ -22,7 +22,7 @@ $( document ).ready(
 
 						function( e )
 						{
-							$( this ).children( "img" ).attr( "src", "./images/link-pp.png" );
+							$( this ).children( "img" ).attr( "src", "./images/link-pp.gif" );
 						}
 					);
 
