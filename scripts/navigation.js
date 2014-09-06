@@ -63,7 +63,7 @@ $( document ).ready(
 
 								// secondly, regardless, display a tooltip about it.
 
-								$( "#ttip-" + this.innerText.toLowerCase() ).fadeIn( "slow" ).delay( 2800 ).fadeOut( "slow" );
+								$( "#ttip-" + this.innerText.toLowerCase() ).fadeIn( "slow" ).delay( 2750 ).fadeOut( "slow" );
 							}
 						);
 					}

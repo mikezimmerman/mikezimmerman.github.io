@@ -127,7 +127,7 @@ h5
 
 
 /*************************
-		colorways.
+		colorway.
 **************************/
 
 /* <!-- body --> */
@@ -197,7 +197,7 @@ body
 }
 	#examples button:hover
 	{
-		color: #cf2033; /*n/c*/
+		color: #999;
 	}
 
 #expertise
