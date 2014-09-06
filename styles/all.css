@@ -126,9 +126,112 @@ h5
 }
 
 
-/**************************************
-		reg. formatting styles.
-***************************************/
+/*************************
+		colorways.
+**************************/
+
+/* <!-- body --> */
+
+body
+{
+	background-color: #333; /* (note, s.a. Footer section.) */
+}
+
+/* <!-- Navigation, top --> */
+
+#container-nav
+{
+	color: #8d8d8d;
+	background-color: #333;
+}
+
+#nav button
+{
+	background-color: transparent; /*n/c*/
+}
+	#exampl-btn /*new.*/
+	{
+		color: #35ddcb; /* s/a the sect. it links to (below). */
+	}
+	#expert-btn /*new.*/
+	{
+		color: #32d298; /* s/a the sect. it links to (below). */
+	}
+	#nav button:hover
+	{
+		background-color: #4d4d4d;
+	}
+
+/* <!-- Header --> */
+
+#container-header
+{
+	color: #000;
+	background-color: #fff;
+}
+
+#headshot
+{
+	display: block;
+	width: 72px;
+	height: 72px;
+	background-image: url( ../images/photo.gif );
+}
+
+/* <!-- Main "Body" --> */
+
+#examples
+{
+	color: #35ddcb; /*n/c*/
+	background-color: #606060;
+}
+	#examples .reversal
+	{
+		background-color: #35ddcb; /*n/c*/
+		color: #606060;
+	}
+
+#examples button
+{
+	background-color: transparent; /*n/c*/
+}
+	#examples button:hover
+	{
+		color: #cf2033; /*n/c*/
+	}
+
+#expertise
+{
+	color: #32d298;
+	background-color: #606060;
+}
+	#expertise .reversal
+	{
+		color: #606060;
+		background-color: #32d298;
+	}
+	#expertise .dimmed h4
+	{
+		color: #606060;
+		background-color: #94997e;
+	}
+	#expertise .dimmed ul
+	{
+		color: #94997e;
+	}
+
+/* <!-- Footer | Navigation, bottom --> */
+
+#container-footer
+{
+	color: #8d8d8d;
+	background-color: #333;
+}
+
+
+/***************************************
+		other formatting styles.
+****************************************/
 
 /* <!-- fundamental body styles. --> */
 
@@ -136,7 +239,6 @@ body
 {
 	min-height: 100%;
 	font-family: Glober, "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
-	background-color: #58644b; /* (note, s.a. Footer section.) */
 }
 
 /* <!-- classes, and other multi-section- and non-section-specific styles. --> */
@@ -206,17 +308,11 @@ h4
 }
 
 
-/***************************************
-		content-specific styles.
-****************************************/
+/**********************************************
+		content-specific layout styles.
+***********************************************/
 
 /* <!-- Navigation, top --> */
-
-#container-nav
-{
-	color: #58644b;
-	background-color: #959a7c;
-}
 
 #nav
 {
@@ -241,13 +337,8 @@ h4
 {
 	display: inline;
 	padding: 0 1.125em;
-	background-color: transparent;
 	border: 0;
 }
-	#nav button:hover
-	{
-		background-color: #aaaf91;
-	}
 
 
 /* <!-- Header --> */
@@ -256,8 +347,6 @@ h4
 {
 	width: 100%;
 	padding: 1.125em 0;
-	color: #af71b0;
-	background-color: #f4cf5f;
 }
 	#header h1
 	{
@@ -277,49 +366,17 @@ h4
 	padding: 1.125em 1.6875em;
 }
 
-#examples
-{
-	color: #ff5769;
-	background-color: #af71b0;
-}
-	#examples .reversal
-	{
-		background-color: #ff5769;
-		color: #af71b0;
-	}
-
 #examples button
 {
 	height: 2.25em;
 	margin-bottom:1.125em;
-	background-color: transparent;
 	border: 0;
 	white-space: nowrap;
 }
-	#examples button:hover
-	{
-		color: #cf2033;
-	}
 
-#expertise
-{
-	color: #0074ad;
-	background-color: #a69daf;
-}
-	#expertise .reversal
-	{
-		color: #a69daf;
-		background-color: #0074ad;
-	}
-	#expertise .dimmed h4
-	{
-		color: #a69daf;
-		background-color: #71788b;
-	}
 	#expertise .dimmed ul
 	{
 		margin-bottom:1.13em;
-		color: #71788b;
 	}
 
 #content header
@@ -343,8 +400,6 @@ h4
 #container-footer
 {
 	clear: both;
-	color: #959a7c;
-	background-color: #58644b;
 }
 
 #footer p
