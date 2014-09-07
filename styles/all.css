@@ -65,7 +65,7 @@ section footer
 html
 {
 	height: 100%;
-	font-family: sans-serif;
+	/*font-family: sans-serif;*/
 	font-size: 100%;				/* http://filamentgroup.com/lab/how_we_learned_to_leave_body_font_size_alone/ */
 	line-height: 1;					/* http://meyerweb.com/eric/thoughts/2008/05/06/line-height-abnormal/ */
 	-moz-text-size-adjust: 100%;
@@ -229,16 +229,16 @@ body
 }
 
 
-/***************************************
-		other formatting styles.
-****************************************/
+/************************************
+		other general styles.
+*************************************/
 
 /* <!-- fundamental body styles. --> */
 
 body
 {
 	min-height: 100%;
-	font-family: Glober, "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+	font-family: MuseoSans, Helvetica, Verdana, Arial, sans-serif;
 }
 
 /* <!-- classes, and other multi-section- and non-section-specific styles. --> */
@@ -302,15 +302,15 @@ h6
 {
 	font-family: Mangerica;
 }
-h4
+h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font is only called once (to see if that makes font-loading more efficient.) */
 {
 	font-family: MuseoSlabItalic;
 }
 
 
-/**********************************************
-		content-specific layout styles.
-***********************************************/
+/***************************************
+		content-specific styles.
+****************************************/
 
 /* <!-- Navigation, top --> */
 
@@ -348,7 +348,7 @@ h4
 	width: 100%;
 	padding: 1.125em 0;
 }
-	#header h1
+	#header h1, #footer p /* moved the #footer p's font-assignment to here, so that ea. font is only called once (to see if that makes font-loading more efficient.) */
 	{
 		font-family: Choplin;
 	}
@@ -405,7 +405,7 @@ h4
 #footer p
 {
 	display: inline;
-	font-family: Choplin;
+	/*font-family: Choplin;*/
 }
 
 #footer h3
@@ -436,7 +436,7 @@ h4
 	margin-left: 0.5625em;
 	padding: 1px;
 
-	font-family: MuseoSlabItalic;
+	/*font-family: MuseoSlabItalic;*/
 	font-size:14px;
 	line-height: 20px;
 

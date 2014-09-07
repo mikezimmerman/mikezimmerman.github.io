@@ -2,20 +2,6 @@
 		Web Fonts
 ************************/
 
-/* body */
-
-@font-face
-{
-	font-family: Glober;
-	src: url( "../fonts/Glober_Bold-webfont.eot" );											/* IE9 Compat Modes */
-	src: url( "../fonts/Glober_Bold-webfont.eot?#iefix" ) format( "embedded-opentype" ),	/* IE6 - IE8 */
-		 url( "../fonts/Glober_Bold-webfont.woff" ) format( "woff" ),						/* Modern Browsers */
-		 url( "../fonts/Glober_Bold-webfont.ttf" ) format( "truetype" ),					/* Safari, Android, iOS */
-		 url( "../fonts/Glober_Bold-webfont.svg#Glober" ) format( "svg" );					/* Legacy iOS */
-	font-weight: normal;
-	font-style: normal;
-}
-
 /* p, #vitae li */
 
 @font-face
