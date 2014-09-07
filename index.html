@@ -3,18 +3,26 @@
 <!--[if !IE]><!--><html><!--<![endif]-->
 <head lang="en" >
 
+	<!-- my web fonts (loading this first because "normalize" is huge and I want fonts to render before that has to be parsed). -->
+	<link type="text/css" rel="stylesheet" href="./styles/fonts.css" />
+	<!-- Modern HTML5 alternative to trad. "CSS Reset". (nicolasgallagher) -->
+	<link type="text/css" rel="stylesheet" href="./styles/normalize.css" />
+	<!-- my custom styles, for all media. -->
+	<link type="text/css" rel="stylesheet" href="./styles/all.css" />
+	<!-- Modern HTML5 Float-Clearing alternative to trad. "clearfix". (nicolasgallagher) -->
+	<link type="text/css" rel="stylesheet" href="./styles/clearfix.css" />
+
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- suppress default iPhone scaling -->
-
-	<link type="text/css" rel="stylesheet" href="./styles/compiled.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /><!-- suppress default iPhone scaling -->
 
 	<script src="./scripts/jquery-1.11.1.min.js" ></script>
-	<script src="./scripts/jquery.visible.js" ></script><!-- I use to elect weather or not to scrollTo targets on nav btn clicks. -->
-	<script src="./scripts/navigation.js" ></script>
+	<script src="./scripts/jquery.visible.js" ></script><!-- using to determine whether or not to scrollTo the targets on nav btn clicks. -->
 
-	<script src="./scripts/hideaddressbar.js" ></script> <!-- Normalized hide address bar for iOS & Android. (scottjehl) -->
-	<script src="./scripts/respond.min.js" ></script> <!-- Adds media query support for IE8 and under. (scottjehl) -->
+	<script src="./scripts/navigation.js" ></script><!-- mine -->
+
+	<script src="./scripts/hideaddressbar.js" ></script><!-- Normalized hide address bar for iOS & Android. (scottjehl) -->
+	<script src="./scripts/respond.min.js" ></script><!-- Adds media query support for IE8 and under. (scottjehl) -->
 
 <!-- HTML5 Shim compels IE8 and under to correctly render the HTML5-specific elements. -->
 <!--[if lt IE 9]>
@@ -37,6 +45,7 @@
 
 </head>
 <body>
+
 
 
 <!-- Navigation, top -->
