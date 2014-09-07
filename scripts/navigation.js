@@ -4,8 +4,13 @@ $( document ).ready(
 	{
 		// fade-in all of the text to avoid FOUT.
 
-		$( ".fontFade" ).css( { opacity: 0.0, visibility: "visible" } ).animate( { opacity: 1.0 }, "slow", "linear" );
+		$( ".fontFade" ).each( 
 
+			function ()
+			{
+				$( this ).css( { opacity: 0.0, visibility: "visible" } ).animate( { opacity: 1.0 }, "slow", "linear" );
+			}
+		);
 
 		// attach click event-listeners to all of the buttons.
 
