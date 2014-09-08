@@ -20,6 +20,8 @@ $( document ).ready(
 			{
 				if ( $( this ).data( "href" ) ) // link button
 				{
+					$( this ).attr( "title", this.innerText );
+
 					$( this ).on( "mouseenter", 
 
 						function( e )

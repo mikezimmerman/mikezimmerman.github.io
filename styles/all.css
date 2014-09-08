@@ -134,7 +134,7 @@ h5
 
 body
 {
-	background-color: #333; /* (note, s.a. Footer section.) */
+	background-color: #333;
 }
 
 /* <!-- Navigation, top --> */
@@ -168,6 +168,7 @@ body
 {
 	color: #000;
 	background-color: #fff;
+	overflow: hidden;
 }
 
 #headshot
@@ -241,6 +242,7 @@ body
 	font-family: MuseoSans, Helvetica, Verdana, Arial, sans-serif;
 }
 
+
 /* <!-- classes, and other multi-section- and non-section-specific styles. --> */
 
 button img,
@@ -259,10 +261,11 @@ button p
 	box-sizing: border-box;
 }
 
-.box
+.wrapper .box
 {
-	padding: 0 1.125em;
+	margin: 0 1.125em;
 }
+
 .box h4
 {
 	margin-bottom: 0.90125em;
@@ -270,7 +273,6 @@ button p
 .box ul
 {
 	list-style: none;
-	padding: 0;
 }
 
 .hidden
@@ -286,6 +288,7 @@ button p
 	{
 		margin-right: 0;
 	}
+
 
 /* <!-- font assignment. --> */
 
@@ -379,6 +382,11 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 		margin-bottom:1.13em;
 	}
 
+#content
+{
+	overflow: hidden;
+}
+
 #content header
 {
 	margin-bottom: 1.13em;
@@ -433,10 +441,10 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 	max-width: 280px;
 	min-width: 50px;
 
-	margin-left: 0.5625em;
+	margin-right: 1.6875em;
 	padding: 1px;
 
-	/*font-family: MuseoSlabItalic;*/
+	/*font-family: MuseoSlabItalic;*/ /* (moved up to gen. font-assignment sect.) */
 	font-size:14px;
 	line-height: 20px;
 
@@ -491,6 +499,176 @@ img
 	border: 0;
 	-ms-interpolation-mode: bicubic; /* http://css-tricks.com/ie-fix-bicubic-scaling-for-images/ */
 }
+
+
+/*****************************
+		Media Queries.
+******************************/
+
+/* smaller than any device; just to ensure top nav buttons never fall off screen. */
+
+@media screen and ( max-width: 17.5em )
+{
+	#nav button
+	{
+		max-width: 71px;
+		overflow: hidden;
+	}
+}
+
+/* 20em (320px) or less */
+/* smartphones, iPhone, portrait 480x320 phones */
+/* 20em (320px) to 30em (480px) */
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+@media screen and ( max-width: 30em )
+{
+	body
+	{
+		font-size: 71.19140625%;
+	}
+
+	#container-header h1
+	{
+		font-size: 212.5%;
+	}
+	#container-header h2
+	{
+		font-size: 337.5%;
+	}
+
+	#examples article
+	{
+		width: 100%;
+	}
+		#examples .box
+		{
+			overflow: hidden;
+		}
+
+	article .dimmed
+	{
+		padding-bottom: 2.25em;
+	}
+
+	article .active
+	{
+		clear: both;
+	}
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+/* 30em (480px) to 40em (640px) */
+
+@media screen and ( min-width: 30em ) and ( max-width: 40em )
+{
+	body
+	{
+		font-size: 74.375%;
+	}
+
+	#examples article
+	{
+		width: 100%;
+	}
+		#examples .box
+		{
+			overflow: hidden;
+		}
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+/* (640px to 960px) */
+
+@media screen and ( min-width: 40em ) and ( max-width: 60em )
+{
+	body
+	{
+		font-size: 84.375%;
+	}
+}
+
+/* big landscape tablets, laptops, and desktops */
+/* (960px to 1,280px) */
+
+@media screen and ( min-width: 60em ) and ( max-width: 80em )
+{
+	body
+	{
+		font-size: 88.6161%;
+	}
+
+	#examples article
+	{
+		min-width: 49.75%;
+		max-width: 50%;
+	}
+		#examples .box
+		{
+			overflow: hidden;
+		}
+}
+
+/* hi-res laptops and desktops */
+
+@media screen and ( min-width: 80em ) and ( max-width: 90em )
+{
+	body
+	{
+		font-size: 92.857142857142591836734693878309%;
+	}
+
+	#examples article
+	{
+		min-width: 47.75%;
+		max-width: 48%;
+	}
+		#examples .box
+		{
+			overflow: hidden;
+		}
+}
+
+/* print */
+
+@media print and ( max-width: 8.5in )
+{
+	body
+	{
+		font-size: 50%;
+	}
+
+	#container-nav
+	{
+		display: none;
+	}
+
+	#container-header
+	{
+		height: auto;
+	}
+
+	#examples
+	{
+		float: right;
+		width: 37.78%;
+		overflow: hidden;
+	}
+
+	#expertise
+	{
+		float: left;
+		width: 54%;
+	}
+
+	#container-footer
+	{
+		font-size: 125%;
+		margin-top: .5in;
+		clear: both;
+	}
+}
+
 
 
 /************************************
