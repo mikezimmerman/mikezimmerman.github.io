@@ -476,30 +476,6 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 }
 
 
-/*******************************
-		for fluid media.
-********************************/
-
-figure
-{
-	position: relative;
-}
-
-figure img,
-figure object,
-figure embed,
-figure video
-{
-	display: block;
-	max-width: 100%; 
-}
-
-img
-{
-	border: 0;
-	-ms-interpolation-mode: bicubic; /* http://css-tricks.com/ie-fix-bicubic-scaling-for-images/ */
-}
-
 
 /*****************************
 		Media Queries.
@@ -675,53 +651,9 @@ img
 		IE 8 and below fixes.
 *************************************/
 
-/* figures, images */
-
-.ie #examples figure
-{
-	width: 100%;
-	box-sizing: border-box;
-}
-
-/* "*" hack applies only to IE7 and below */
-
-.ie #examples figure
-{
-	*width: auto;
-}
-
-/* Navigation */
-
-/* IE8 .checked class for checkbox.js */
-
-#nav input[type=checkbox].checked ~ nav
-{
-	height: auto;
-	overflow: visible;  
-}
-
-/* Always show nav, IE7 and below */
-
-.ie #nav nav
-{
-	*height: auto;
-	*overflow: visible;  
-}
-
-/* Hide navicon, IE7 and below */
-
-.ie #nav label
-{
-	*background: none;
-}
-	
 /* box-sizing polyfill, IE7 and below */
 
-.ie .wrapper,
-.ie .name,
-.ie .email,
-.ie input,
-.ie textarea
+.ie .wrapper
 {
 	*behavior: url( "http://mikezimmerman.github.io/scripts/boxsizing.htc" );
 }
