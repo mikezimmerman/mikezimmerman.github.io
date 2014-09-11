@@ -32,17 +32,18 @@
 
 
 
+
 <!-- Navigation, top -->
 
-<div id="container-nav" >
+<div id="container-nav" class="cw01" >
 	<section id="nav" class="cf wrapper fontFade" style="visibility:hidden;" >
 
-		<!-- <h3>Mike Zimmerman</h3> -->
+		<div id="color-swap" class="cw01" title='Click here to install the "Deep Midnight Flamingo" theme.' ></div>
 
 		<div id="nav-buttons" >
-			<button id="expert-btn" title="Expertise" ><h3>Expertise</h3></button>
-			<button id="exampl-btn" title="Examples" ><h3>Examples</h3></button>
-			<button data-mailto="mikezimmerman@users.noreply.github.com" title="Email" ><h3>Email</h3></button>
+			<button id="expert-btn" class="cw01" title="Expertise" ><h3>Expertise</h3></button>
+			<button id="exampl-btn" class="cw01" title="Examples" ><h3>Examples</h3></button>
+			<button class="cw01" data-mailto="mikezimmerman@users.noreply.github.com" title="Email" ><h3>Email</h3></button>
 		</div>
 
 	</section>
@@ -72,7 +73,7 @@
 
 		<!-- the "Examples" portfolio section -->
 
-		<section id="examples" class="cf" >
+		<section id="examples" class="cw01 cf" >
 		<div class="fontFade" style="visibility:hidden;" >
 
 			<header>
@@ -86,23 +87,21 @@
 
 			<article class="wrapper" >
 				<div class="box" >
-					<h4 class="reversal" >&nbsp;&nbsp;Development</h4>
-					<button data-href="./projects/js-el-instructbox/instructbox.htm" >
-						<img src="./images/link-pp.gif" />&nbsp;
+					<h4 class="reversal cw01" >&nbsp;&nbsp;Development</h4>
+					<button class="cw01" data-href="./projects/js-el-instructbox/instructbox.htm" >
+						<img id="link-1-00" src="./images/link-pp.gif" /><img id="link-1-01" src="./images/link-mf.gif" style="display:none;" />
 						<p>Floating Instructions UI for system simulations.</p>
 					</button>
-					<!-- <h6><i>tags:</i>&nbsp; JavaScript, jQuery, UI, UX, Graphic Design, Layout, eLearning Development</h6> -->
 				</div>
 			</article>
 
 			<article class="wrapper" >
 				<div class="box" >
-					<h4 class="reversal" >&nbsp;&nbsp;Design</h4>
+					<h4 class="reversal cw01" >&nbsp;&nbsp;Design</h4>
 					<button data-href="./projects/fl-el-menards/menards.htm" >
-						<img src="./images/link-pp.gif" />&nbsp;
+						<img id="link-2-00" src="./images/link-pp.gif" /><img id="link-2-01" src="./images/link-mf.gif" style="display:none;" />
 						<p>Custom eLearning Course produced as a Flash Movie.</p>
 					</button>
-					<!-- <h6><i>tags:</i>&nbsp; UI, UX, Graphic Design, Layout, Flash, Instructional Design, Writing (Instructional), eLearning Development</h6> -->
 				</div>
 			</article>
 
@@ -115,7 +114,7 @@
 
 		<!-- the "Expertise" About Me section -->
 
-		<section id="expertise" class="cf" >
+		<section id="expertise" class="cw01 cf" >
 		<div class="fontFade" style="visibility:hidden;" >
 
 			<header>
@@ -129,21 +128,21 @@
 
 			<article class="wrapper dimmed" >
 				<div class="box" >
-					<h4>&nbsp;&nbsp;Ascendant</h4>
-					<ul>
+					<h4 class="cw01" >&nbsp;&nbsp;Ascendant</h4>
+					<ul class="cw01" >
 						<li>Bootstrap</li>
 						<li>Foundation</li>
-						<li>Git, GitHub</li>
 						<li>Backbone</li>
 						<li>Ember</li>
 						<li>Scrum</li>
+						<li>Less</li>
 					</ul>
 				</div>
 			</article>
 
 			<article class="wrapper active" >
 				<div class="box" >
-					<h4 class="reversal" >&nbsp;&nbsp;Current</h4>
+					<h4 class="reversal cw01" >&nbsp;&nbsp;Current</h4>
 					<ul>
 						<li>HTML5, CSS3, JavaScript</li>
 						<li>Responsive Design</li>
@@ -177,7 +176,7 @@
 					<ul>
 						<li>Photoshop</li>
 						<li>Visual Studio</li>
-						<li>Sublime</li>
+						<li>Sublime, GitHub</li>
 						<li>Instructional Design</li>
 						<li>eLearning Development</li>
 						<li>LMS, CMS, LCMS Admin</li>
@@ -195,7 +194,7 @@
 						<li>Writing, Copyediting, Proofreading</li>
 						<li>Fine Art, Illustration, Photography</li>
 						<li>Fashion Illustration, Menu Design</li>
-						<li>Fine Pastry &amp; Custom Ice Creams</li>
+						<li>Fine Pastries &amp; Custom Ice Creams</li>
 					</ul>
 				</div>
 			</article>
@@ -213,10 +212,10 @@
 
 <!-- Footer, bottom -->
 
-<div id="container-footer" >
+<div id="container-footer" class="cw01" >
 	<footer id="footer" class="fontFade" style="visibility:hidden;" >
 		<p>&copy; 2014 Mike Zimmerman. All rights reserved.</p>
-		<h5>&nbsp; version: 1.0.1</h5>
+		<h5>&nbsp; version: 1.0.3</h5>
 		<h3>* metropolis: Chicago</h3>
 	</footer>
 </div>
@@ -236,9 +235,11 @@
 	<script src="./scripts/jquery-1.10.2.min.js" ></script>
 <![endif]-->
 	<script src="./scripts/jquery-1.11.1.min.js" ></script>
-	<script src="./scripts/jquery.visible.js" ></script> <!-- using to determine whether or not to scrollTo the targets on nav btn clicks. -->
 
 	<script src="./scripts/navigation.js" ></script> <!-- mine -->
+
+	<script src="./scripts/jquery.visible.js" ></script> <!-- using to determine whether or not to scrollTo the targets on nav btn clicks. -->
+	<script src="./scripts/jquery-ui.min.js" ></script> <!-- using for the animation of the swapping of the colorways. -->
 
 	<script src="./scripts/hideaddressbar.js" ></script> <!-- Normalized hide address bar for iOS & Android. (scottjehl) -->
 	<script src="./scripts/respond.min.js" ></script> <!-- Adds media query support for IE8 and under. (scottjehl) -->

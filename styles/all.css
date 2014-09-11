@@ -144,23 +144,56 @@ body
 	color: #8d8d8d;
 	background-color: #333;
 }
+	#container-nav.cw02
+	{
+		color: #333;
+		background-color: #777;
+	}
+
+#color-swap
+{
+	float: left;
+	min-width: 22px;
+	width: 1.8025em;
+	height: 22px;
+	margin: 1em 0 0 0;
+	background-color: #802f4c;
+	cursor: pointer;
+}
+	#color-swap.cw02
+	{
+		background-color: #94997e;
+	}
 
 #nav button
 {
-	background-color: transparent; /*n/c*/
+	background-color: transparent;
+	transition: 0.225s;
 }
-	#exampl-btn /*new.*/
+	#exampl-btn
 	{
 		color: #35ddcb; /* s/a the sect. it links to (below). */
 	}
-	#expert-btn /*new.*/
+		#exampl-btn.cw02
+		{
+			color: #ff5769;
+		}
+	#expert-btn
 	{
 		color: #32d298; /* s/a the sect. it links to (below). */
 	}
+		#expert-btn.cw02
+		{
+			color: #ff0069;
+		}
 	#nav button:hover
 	{
 		background-color: #4d4d4d;
 	}
+		#nav button.cw02:hover
+		{
+			background-color: #878787;
+		}
 
 /* <!-- Header --> */
 
@@ -183,22 +216,40 @@ body
 
 #examples
 {
-	color: #35ddcb; /*n/c*/
+	color: #35ddcb;
 	background-color: #606060;
 }
 	#examples .reversal
 	{
-		background-color: #35ddcb; /*n/c*/
 		color: #606060;
+		background-color: #35ddcb;
 	}
+
+	/* colorway #2 */
+
+	#examples.cw02
+	{
+		color: #ff5769;
+		background-color: #333;
+	}
+		#examples .reversal.cw02
+		{
+			background-color: #ff5769;
+			color: #333;
+		}
 
 #examples button
 {
-	background-color: transparent; /*n/c*/
+	background-color: transparent;
+	transition: 0.225s;
 }
 	#examples button:hover
 	{
 		color: #999;
+	}
+	#examples button p
+	{
+		padding-left: 0.13em;
 	}
 
 #expertise
@@ -221,6 +272,29 @@ body
 		color: #94997e;
 	}
 
+	/* colorway #2 */
+
+	#expertise.cw02
+	{
+		color: #ff0069;
+		background-color: #333;
+	}
+		#expertise .reversal.cw02
+		{
+			color: #333;
+			background-color: #ff0069;
+		}
+
+		#expertise h4.cw02 /* .dimmed */
+		{
+			color: #333;
+			background-color: #9e0039;
+		}
+		#expertise ul.cw02 /* .dimmed */
+		{
+			color: #9e0039;
+		}
+
 /* <!-- Footer | Navigation, bottom --> */
 
 #container-footer
@@ -228,6 +302,14 @@ body
 	color: #8d8d8d;
 	background-color: #333;
 }
+
+	/* colorway #2 */
+
+	#container-footer.cw02
+	{
+		color: #8d8d8d;
+		background-color: #585858;
+	}
 
 
 /************************************
