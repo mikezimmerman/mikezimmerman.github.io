@@ -137,6 +137,13 @@ body
 	background-color: #333;
 }
 
+	/* colorway #2 */
+
+	body.cw02
+	{
+		background-color: #585858;
+	}
+
 /* <!-- Navigation, top --> */
 
 #container-nav
