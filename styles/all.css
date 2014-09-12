@@ -443,11 +443,13 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 	#header h1, #footer p /* moved the #footer p's font-assignment to here, so that ea. font is only called once (to see if that makes font-loading more efficient.) */
 	{
 		font-family: Choplin;
+		letter-spacing: -0.025em;
 	}
 	#header h2
 	{
 		font-weight: 900;
 		font-family: MuseoSlab;
+		letter-spacing: -0.03em;
 	}
 
 
