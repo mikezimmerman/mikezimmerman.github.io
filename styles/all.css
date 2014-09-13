@@ -463,14 +463,14 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 #examples button
 {
 	height: 2.25em;
-	margin-bottom:1.125em;
+	margin-bottom: 1.125em;
 	border: 0;
 	white-space: nowrap;
 }
 
 #expertise ul
 {
-	margin-bottom:1.13em;
+	margin-bottom: 1.13em;
 }
 
 #content
@@ -504,7 +504,6 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 #footer p
 {
 	display: inline;
-	/*font-family: Choplin;*/
 }
 
 #footer h3
@@ -535,7 +534,7 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 	margin-right: 1.6875em;
 	padding: 1px;
 
-	/*font-family: MuseoSlabItalic;*/ /* (moved up to gen. font-assignment sect.) */
+	/*font-family: MuseoSlabItalic;*/ /* (moved to gen. font-assignment sect.) */
 	font-size:14px;
 	line-height: 20px;
 
