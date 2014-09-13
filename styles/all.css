@@ -231,6 +231,15 @@ body
 		color: #606060;
 		background-color: #35ddcb;
 	}
+	#examples #developmt
+	{
+		color: #8ad8d0;
+	}
+		#developmt .reversal
+		{
+			color: #606060;
+			background-color: #8ad8d0;
+		}
 
 	/* colorway #2 */
 
@@ -241,9 +250,20 @@ body
 	}
 		#examples .reversal.cw02
 		{
-			background-color: #ff5769;
 			color: #333;
+			background-color: #ff5769;
 		}
+		#examples #developmt.cw02
+		{
+			/*color: #ff6666;*/
+			color: #cf2033;
+		}
+			#developmt .reversal.cw02
+			{
+				color: #333;
+				/*background-color: #ff6666;*/
+				background-color: #cf2033;
+			}
 
 #examples button
 {

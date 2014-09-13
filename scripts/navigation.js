@@ -73,7 +73,7 @@ $( document ).ready(
 		var toggle = 0;
 		var pretog;
 
-		$( "#color-swap" ).on( "click",  
+		$( "#color-swap" ).on( "click",
 
 			function ( e )
 			{
