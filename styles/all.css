@@ -468,10 +468,10 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 	white-space: nowrap;
 }
 
-	#expertise .dimmed ul
-	{
-		margin-bottom:1.13em;
-	}
+#expertise ul
+{
+	margin-bottom:1.13em;
+}
 
 #content
 {
@@ -613,11 +613,6 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 			overflow: hidden;
 		}
 
-	article .dimmed
-	{
-		padding-bottom: 2.25em;
-	}
-
 	article .active
 	{
 		clear: both;
@@ -642,6 +637,12 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 		{
 			overflow: hidden;
 		}
+
+	#expertise .dimmed
+	{
+		float: right;
+	}
+
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -652,6 +653,11 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 	body
 	{
 		font-size: 84.375%;
+	}
+
+	#expertise .dimmed
+	{
+		float: right;
 	}
 }
 
