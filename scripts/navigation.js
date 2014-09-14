@@ -4,7 +4,7 @@ $( document ).ready(
 	{
 		// fade-in all of the text to avoid FOUT.
 
-		$( ".fontFade" ).each( 
+		$( ".fadein" ).each( 
 
 			function ()
 			{

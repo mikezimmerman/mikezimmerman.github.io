@@ -231,11 +231,11 @@ body
 		color: #606060;
 		background-color: #35ddcb;
 	}
-	#examples #developmt
+	#examples #development
 	{
 		color: #8ad8d0;
 	}
-		#developmt .reversal
+		#development .reversal
 		{
 			color: #606060;
 			background-color: #8ad8d0;
@@ -253,11 +253,11 @@ body
 			color: #333;
 			background-color: #ff5769;
 		}
-		#examples #developmt.cw02
+		#examples #development.cw02
 		{
 			color: #ff7997;
 		}
-			#developmt .reversal.cw02
+			#development .reversal.cw02
 			{
 				color: #333;
 				background-color: #ff7997;
