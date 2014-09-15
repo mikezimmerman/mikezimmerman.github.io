@@ -545,31 +545,22 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 {
 	position: absolute;
 	display: none; /*inline*/
-
 	max-width: 280px;
 	min-width: 50px;
 
 	margin-right: 1.6875em;
 	padding: 1px;
-
-	/*font-family: MuseoSlabItalic;*/ /* (moved to gen. font-assignment sect.) */
 	font-size:14px;
 	line-height: 20px;
 
 	color: #000;
 	background-color: #ffffff;
-
 	border: 1px solid #ccc;
 	border: 1px solid rgba( 0, 0, 0, 0.2 );
-
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
 
 	-webkit-box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
 	-moz-box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
 	box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
-
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
