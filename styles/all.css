@@ -147,6 +147,10 @@ body
 	{
 		background-color: #7c7d17;
 	}
+	body.cw03
+	{
+		background-color: #717171;
+	}
 
 /* <!-- Navigation, top --> */
 
@@ -164,25 +168,38 @@ body
 	{
 		color: #c1c32e;
 		background-color: #eaead2;
-/*background-color: #e2e2cd;
-background-color: #dbdbc8;
-*/	}
+/*background-color: #e2e2cd;*/
+/*background-color: #dbdbc8;*/
+	}
+	#container-nav.cw03
+	{
+		color: #c7c7c7;
+		background-color: #939393;
+	}
 
  /* for: #theme-selector */
 
 	#ts-00
 	{
 		background-color: #94997e;
+background-color: #8ad8d0;
+/*background-color: #35ddcb;*/
+background-color: #32d298;
+background-color: #606060;
 	}
-
 	#ts-01, #ts-01-2
 	{
 		background-color: #802f4c;
+/*background-color: #990033;*/
+background-color: #8c092f;
 	}
-
 	#ts-02, #ts-02-2
 	{
 		background-color: #7c7d17;
+	}
+	#ts-03
+	{
+		background-color: #000;
 	}
 
 #nav button
@@ -203,6 +220,10 @@ background-color: #dbdbc8;
 			color: #955d4c;
 color: #8d5748;
 		}
+		#exampl-btn.cw03
+		{
+			color: #c7c7c7;
+		}
 	#expert-btn
 	{
 		color: #32d298; /* s/a the sect. it links to (below). */
@@ -216,6 +237,10 @@ color: #8d5748;
 			color: #9d829b;
 color: #957c93;
 		}
+		#expert-btn.cw03
+		{
+			color: #c7c7c7;
+		}
 	#nav button:hover
 	{
 		background-color: #4d4d4d;
@@ -227,6 +252,10 @@ color: #957c93;
 		#nav button.cw02:hover
 		{
 			background-color: #fbfbe2;
+		}
+		#nav button.cw03:hover
+		{
+			background-color: #a3a3a3;
 		}
 
 /* <!-- Header --> */
@@ -242,14 +271,13 @@ color: #957c93;
 		color: #3854c0;
 		background-color: #66cbff;
 	}
-
-#headshot
-{
-	display: block;
-	width: 72px;
-	height: 72px;
-	background-image: url( ../images/photo.gif );
-}
+	#container-header.cw03
+	{
+		color: #ece4cb;
+color: #fff;
+color: #f5f1e5;
+		background-color: #000;
+	}
 
 /* <!-- Main "Body" --> */
 
@@ -330,6 +358,27 @@ color: #cccc00;
 				background-color: #996633;
 			}
 
+	#examples.cw03
+	{
+		color: #dc3465;
+		background-color: #ecce7b;
+	}
+		#examples .reversal.cw03
+		{
+			color: #ecce7b;
+			background-color: #dc3465;
+		}
+		#examples #development.cw03
+		{
+			color: #a15389;
+		}
+			#development .reversal.cw03
+			{
+				color: #ecce7b;
+				background-color: #a15389;
+			}
+
+
 #examples button
 {
 	background-color: transparent;
@@ -338,10 +387,6 @@ color: #cccc00;
 	#examples button:hover
 	{
 		color: #999;
-	}
-	#examples button p
-	{
-		padding-left: 0.13em;
 	}
 
 #expertise
@@ -424,6 +469,30 @@ background-color: #a28a0a;
 color: #a28a0a;
 		}
 
+	#expertise.cw03
+	{
+		color: #6ab820;
+color: #69b745;
+		background-color: #ecce7b;
+	}
+		#expertise .reversal.cw03
+		{
+			color: #ecce7b;
+			background-color: #6ab820;
+background-color: #69b745;
+		}
+
+		#expertise h4.cw03 /* .dimmed */
+		{
+			color: #ecce7b;
+			background-color: #4fa4a1;
+		}
+		#expertise ul.cw03 /* .dimmed */
+		{
+			color: #4fa4a1;
+		}
+
+
 /* <!-- Footer | Navigation, bottom --> */
 
 #container-footer
@@ -443,6 +512,11 @@ color: #a28a0a;
 	{
 		color: #c1c32e;
 		background-color: #7c7d17;
+	}
+	#container-footer.cw03
+	{
+		color: #b2b2b2;
+		background-color: #717171;
 	}
 
 
@@ -559,7 +633,7 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 		width: 1.8025em;
 		height: 7px;
 	}
-	#ts-00, #ts-01-2, #ts-02-2
+	#ts-03, #ts-00, #ts-01-2, #ts-02-2
 	{
 		min-width: 22px;
 		width: 1.8025em;
@@ -607,6 +681,19 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 		letter-spacing: -0.03em;
 	}
 
+#headshot
+{
+	display: block;
+	width: 72px;
+	height: 72px;
+	background-image: url( ../images/photo.gif );
+}
+	#headshot img
+	{
+		display: none;
+		position:absolute; 
+	}
+
 
 /* <!-- Main "Body" --> */
 
@@ -622,6 +709,10 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 	border: 0;
 	white-space: nowrap;
 }
+	#examples button p
+	{
+		padding-left: 0.13em;
+	}
 
 #expertise ul
 {

@@ -70,7 +70,7 @@ $( document ).ready(
 
 		// implement the color-transition animations on click of the "theme-selector" element.
 
-		var themes = [ "Deep Midnight Flamingo", "Blue Skies Above! (Vats of Bile Below)", "Full Moon Over Malapascua Bay" ];
+		var themes = [ "Deep Midnight Flamingo", "Blue Skies Above! (Vats of Bile Below)", "Last Place in the Middle School Science Fair ;-{", "Full Moon Over Malapascua Bay" ];
 		var toggle = 0;
 		var pretog;
 
@@ -82,25 +82,48 @@ $( document ).ready(
 
 				$( "button" ).css( "transition", "0" );
 
+
+				// animate the theme-selector. (this was also the most efficient place to transition the headshots, when applicable.)
+
 				switch ( toggle )
 				{
 					case 0:
 
 						$( "#ts-01" ).delay( 225 ).animate( { height: "0" }, 700 );
 						$( "#ts-02" ).delay( 225 ).animate( { height: "15px" }, 700 );
-						$( "#ts-00" ).delay( 225 ).animate( { height: "7px" }, 700 );
+						$( "#ts-03" ).delay( 225 ).animate( { height: "7px" }, 700 );
 
 					break;
 
 					case 1:
 
+						$( "#hs-2" ).fadeIn( 1100 );
+
 						$( "#ts-02" ).delay( 225 ).animate( { height: "0" }, 700 );
+						$( "#ts-03" ).delay( 225 ).animate( { height: "15px" }, 700 );
+						$( "#ts-00" ).delay( 225 ).animate( { height: "7px" }, 700 );
+
+					break;
+
+					case 2:
+
+						$( "#hs-3" ).fadeIn( 1100,
+
+							function ()
+							{
+								$( "#hs-2" ).css( "display", "none" );
+							}
+						);
+
+						$( "#ts-03" ).delay( 225 ).animate( { height: "0" }, 700 );
 						$( "#ts-00" ).delay( 225 ).animate( { height: "15px" }, 700 );
 						$( "#ts-01-2" ).delay( 225 ).animate( { height: "7px" }, 700 );
 
 					break;
 
-					case 2:
+					case 3:
+
+						$( "#hs-3" ).fadeOut( 1100 );
 
 						$( "#ts-00" ).delay( 225 ).animate( { height: "0" }, 700 );
 
@@ -125,11 +148,12 @@ $( document ).ready(
 					break;
 				}
 
+
 				// fade the link images in and out, as these could not be correctly blended via toggleClass.
 
 				pretog = toggle;
 				++ toggle;
-				toggle = ( toggle !== 3 ? toggle : 0 );
+				toggle = ( toggle !== 4 ? toggle : 0 );
 
 				$( "#link-s-" + pretog + ", #link-v-" + pretog ).fadeOut( 550,
 
@@ -147,18 +171,14 @@ $( document ).ready(
 					}
 				);
 
-				switch ( pretog )
-				{
-					case 1:	$( "#hs-2" ).fadeIn( 1100 );	break;
-					case 2:	$( "#hs-2" ).fadeOut( 1100 );	break;
-				}
 
-				// primary theme fade-transitions. (everything else, other than the imgs above.)
+				// primary theme fade-transitions (using jQueryUI). (this is all color and bgcolors---everything other than the imgs above.)
 
 				if ( ! toggle )
 				{
 					$( ".cw00" ).removeClass( "cw01" );
-					$( ".cw00" ).toggleClass( "cw02", 1100, "linear",
+					$( ".cw00" ).removeClass( "cw02" );
+					$( ".cw00" ).toggleClass( "cw03", 1100, "linear",
 
 						function ()
 						{
