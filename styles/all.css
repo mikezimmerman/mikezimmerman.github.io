@@ -164,7 +164,9 @@ body
 	{
 		color: #c1c32e;
 		background-color: #eaead2;
-	}
+/*background-color: #e2e2cd;
+background-color: #dbdbc8;
+*/	}
 
  /* for: #theme-selector */
 
@@ -199,6 +201,7 @@ body
 		#exampl-btn.cw02
 		{
 			color: #955d4c;
+color: #8d5748;
 		}
 	#expert-btn
 	{
@@ -211,6 +214,7 @@ body
 		#expert-btn.cw02
 		{
 			color: #9d829b;
+color: #957c93;
 		}
 	#nav button:hover
 	{
@@ -294,12 +298,23 @@ body
 	#examples.cw02
 	{
 		color: #955d4c;
+color: #8d5748;
 		background-color: #e0e501;
+background-color: #d9de01;
+background-color: #d3d701;
+background-color: #cccc00;
+/*background-color: #d0d201;*/
 	}
 		#examples .reversal.cw02
 		{
 			color: #e0e501;
+color: #d9de01;
+color: #d3d701;
+color: #cccc00;
+/*color: #d0d201;*/
 			background-color: #955d4c;
+background-color: #8d5748;
+
 		}
 		#examples #development.cw02
 		{
@@ -308,6 +323,10 @@ body
 			#development .reversal.cw02
 			{
 				color: #e0e501;
+color: #d9de01;
+color: #d3d701;
+color: #cccc00;
+/*color: #d0d201;*/
 				background-color: #996633;
 			}
 
@@ -371,22 +390,38 @@ body
 	#expertise.cw02
 	{
 		color: #9d829b;
+color: #957c93;
 		background-color: #e0e501;
+background-color: #d9de01;
+background-color: #d3d701;
+background-color: #cccc00;
+/*background-color: #d0d201;*/
 	}
 		#expertise .reversal.cw02
 		{
 			color: #e0e501;
+color: #d9de01;
+color: #d3d701;
+color: #cccc00;
+/*color: #d0d201;*/
 			background-color: #9d829b;
+background-color: #957c93;
 		}
 
 		#expertise h4.cw02 /* .dimmed */
 		{
 			color: #e0e501;
+color: #d9de01;
+color: #d3d701;
+color: #cccc00;
+/*color: #d0d201;*/
 			background-color: #ab910e;
+background-color: #a28a0a;
 		}
 		#expertise ul.cw02 /* .dimmed */
 		{
 			color: #ab910e;
+color: #a28a0a;
 		}
 
 /* <!-- Footer | Navigation, bottom --> */
