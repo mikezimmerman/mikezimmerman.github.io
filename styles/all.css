@@ -127,7 +127,7 @@ h5
 
 
 /*************************
-		colorway.
+		colorways.
 **************************/
 
 /* <!-- body --> */
@@ -137,11 +137,15 @@ body
 	background-color: #333;
 }
 
-	/* colorway #2 */
+	/* colorways */
 
-	body.cw02
+	body.cw01
 	{
 		background-color: #585858;
+	}
+	body.cw02
+	{
+		background-color: #7c7d17;
 	}
 
 /* <!-- Navigation, top --> */
@@ -151,25 +155,32 @@ body
 	color: #8d8d8d;
 	background-color: #333;
 }
-	#container-nav.cw02
+	#container-nav.cw01
 	{
 		color: #333;
 		background-color: #777;
 	}
+	#container-nav.cw02
+	{
+		color: #c1c32e;
+		background-color: #eaead2;
+	}
 
-#color-swap
-{
-	float: left;
-	min-width: 22px;
-	width: 1.8025em;
-	height: 22px;
-	margin: 1em 0 0 0;
-	background-color: #802f4c;
-	cursor: pointer;
-}
-	#color-swap.cw02
+ /* for: #theme-selector */
+
+	#ts-00
 	{
 		background-color: #94997e;
+	}
+
+	#ts-01, #ts-01-2
+	{
+		background-color: #802f4c;
+	}
+
+	#ts-02, #ts-02-2
+	{
+		background-color: #7c7d17;
 	}
 
 #nav button
@@ -181,25 +192,37 @@ body
 	{
 		color: #35ddcb; /* s/a the sect. it links to (below). */
 	}
-		#exampl-btn.cw02
+		#exampl-btn.cw01
 		{
 			color: #ff5769;
+		}
+		#exampl-btn.cw02
+		{
+			color: #955d4c;
 		}
 	#expert-btn
 	{
 		color: #32d298; /* s/a the sect. it links to (below). */
 	}
-		#expert-btn.cw02
+		#expert-btn.cw01
 		{
 			color: #ff0069;
+		}
+		#expert-btn.cw02
+		{
+			color: #9d829b;
 		}
 	#nav button:hover
 	{
 		background-color: #4d4d4d;
 	}
-		#nav button.cw02:hover
+		#nav button.cw01:hover
 		{
 			background-color: #878787;
+		}
+		#nav button.cw02:hover
+		{
+			background-color: #fbfbe2;
 		}
 
 /* <!-- Header --> */
@@ -210,6 +233,11 @@ body
 	background-color: #fff;
 	overflow: hidden;
 }
+	#container-header.cw02
+	{
+		color: #3854c0;
+		background-color: #66cbff;
+	}
 
 #headshot
 {
@@ -241,26 +269,46 @@ body
 			background-color: #8ad8d0;
 		}
 
-	/* colorway #2 */
+	/* colorways */
 
-	#examples.cw02
+	#examples.cw01
 	{
 		color: #ff5769;
 		background-color: #333;
 	}
-		#examples .reversal.cw02
+		#examples .reversal.cw01
 		{
 			color: #333;
 			background-color: #ff5769;
 		}
-		#examples #development.cw02
+		#examples #development.cw01
 		{
 			color: #ff7997;
 		}
-			#development .reversal.cw02
+			#development .reversal.cw01
 			{
 				color: #333;
 				background-color: #ff7997;
+			}
+
+	#examples.cw02
+	{
+		color: #955d4c;
+		background-color: #e0e501;
+	}
+		#examples .reversal.cw02
+		{
+			color: #e0e501;
+			background-color: #955d4c;
+		}
+		#examples #development.cw02
+		{
+			color: #996633;
+		}
+			#development .reversal.cw02
+			{
+				color: #e0e501;
+				background-color: #996633;
 			}
 
 #examples button
@@ -297,27 +345,48 @@ body
 		color: #94997e;
 	}
 
-	/* colorway #2 */
+	/* colorways */
 
-	#expertise.cw02
+	#expertise.cw01
 	{
 		color: #ff0069;
 		background-color: #333;
 	}
-		#expertise .reversal.cw02
+		#expertise .reversal.cw01
 		{
 			color: #333;
 			background-color: #ff0069;
 		}
 
-		#expertise h4.cw02 /* .dimmed */
+		#expertise h4.cw01 /* .dimmed */
 		{
 			color: #333;
 			background-color: #9e0039;
 		}
-		#expertise ul.cw02 /* .dimmed */
+		#expertise ul.cw01 /* .dimmed */
 		{
 			color: #9e0039;
+		}
+
+	#expertise.cw02
+	{
+		color: #9d829b;
+		background-color: #e0e501;
+	}
+		#expertise .reversal.cw02
+		{
+			color: #e0e501;
+			background-color: #9d829b;
+		}
+
+		#expertise h4.cw02 /* .dimmed */
+		{
+			color: #e0e501;
+			background-color: #ab910e;
+		}
+		#expertise ul.cw02 /* .dimmed */
+		{
+			color: #ab910e;
 		}
 
 /* <!-- Footer | Navigation, bottom --> */
@@ -328,12 +397,17 @@ body
 	background-color: #333;
 }
 
-	/* colorway #2 */
+	/* colorways */
 
-	#container-footer.cw02
+	#container-footer.cw01
 	{
 		color: #8d8d8d;
 		background-color: #585858;
+	}
+	#container-footer.cw02
+	{
+		color: #c1c32e;
+		background-color: #7c7d17;
 	}
 
 
@@ -428,6 +502,34 @@ h4, .tooltip /* moved the .tooltip's font-assignment to here, so that ea. font i
 {
 	padding: 0;
 }
+
+#theme-selector
+{
+	float: left;
+	min-width: 22px;
+	width: 1.8025em;
+	height: 22px;
+	margin: 1em 0 0 0;
+	cursor: pointer;
+}
+	#ts-01
+	{
+		min-width: 22px;
+		width: 1.8025em;
+		height: 15px;
+	}
+	#ts-02
+	{
+		min-width: 22px;
+		width: 1.8025em;
+		height: 7px;
+	}
+	#ts-00, #ts-01-2, #ts-02-2
+	{
+		min-width: 22px;
+		width: 1.8025em;
+		height: 0;
+	}
 
 #nav h3
 {

@@ -67,54 +67,115 @@ $( document ).ready(
 			}
 		);
 
-		// implement the colorway-swapping on click of the "color-swap" element.
 
-		var themes = [ "Deep Midnight Flamingo", "Full Moon Over Malapascua Bay" ];
+		// implement the color-transition animations on click of the "theme-selector" element.
+
+		var themes = [ "Deep Midnight Flamingo", "Blue Skies Above! (Vats of Bile Below)", "Full Moon Over Malapascua Bay" ];
 		var toggle = 0;
 		var pretog;
 
-		$( "#color-swap" ).on( "click",
+		$( "#theme-selector" ).on( "click",
 
 			function ( e )
 			{
-				// remove transitions, as these kill the fades.
+				// tmply. remove transitions, as these kill the fades.
 
 				$( "button" ).css( "transition", "0" );
+
+				switch ( toggle )
+				{
+					case 0:
+
+						$( "#ts-01" ).delay( 225 ).animate( { height: "0" }, 700 );
+						$( "#ts-02" ).delay( 225 ).animate( { height: "15px" }, 700 );
+						$( "#ts-00" ).delay( 225 ).animate( { height: "7px" }, 700 );
+
+					break;
+
+					case 1:
+
+						$( "#ts-02" ).delay( 225 ).animate( { height: "0" }, 700 );
+						$( "#ts-00" ).delay( 225 ).animate( { height: "15px" }, 700 );
+						$( "#ts-01-2" ).delay( 225 ).animate( { height: "7px" }, 700 );
+
+					break;
+
+					case 2:
+
+						$( "#ts-00" ).delay( 225 ).animate( { height: "0" }, 700 );
+
+						$( "#ts-01-2" ).delay( 225 ).animate( { height: "15px" }, 700, 
+
+							function ()
+							{
+								$( "#ts-01-2" ).height( 0 );
+								$( "#ts-01" ).height( 15 );
+							}
+						);
+
+						$( "#ts-02-2" ).delay( 225 ).animate( { height: "7px" }, 700, 
+
+							function ()
+							{
+								$( "#ts-02-2" ).height( 0 );
+								$( "#ts-02" ).height( 7 );
+							}
+						);
+
+					break;
+				}
 
 				// fade the link images in and out, as these could not be correctly blended via toggleClass.
 
 				pretog = toggle;
-				toggle = ( toggle !== 1 ? 1 : 0 );
+				++ toggle;
+				toggle = ( toggle !== 3 ? toggle : 0 );
 
-				$( "#link-1-0" + pretog ).fadeOut( 550,
+				$( "#link-s-" + pretog + ", #link-v-" + pretog ).fadeOut( 550,
 
 					function ()
 					{
-						$( "#link-1-0" + toggle ).fadeIn( 550,
+						$( "#link-s-" + toggle + ", #link-v-" + toggle ).fadeIn( 550,
 
 							function ()
 							{
+								// restore transitions.
+
 								$( "button" ).css( "transition", "0.225s" );
 							}
 						);
 					}
 				);
 
-				$( "#link-2-0" + pretog ).fadeOut( 550,
+				switch ( pretog )
+				{
+					case 1:	$( "#hs-2" ).fadeIn( 1100 );	break;
+					case 2:	$( "#hs-2" ).fadeOut( 1100 );	break;
+				}
 
-					function ()
-					{
-						$( "#link-2-0" + toggle ).fadeIn( 550 );
-					}
-				);
+				// primary theme fade-transitions. (everything else, other than the imgs above.)
 
-				$( ".cw01" ).toggleClass( "cw02", 1100, "linear",
+				if ( ! toggle )
+				{
+					$( ".cw00" ).removeClass( "cw01" );
+					$( ".cw00" ).toggleClass( "cw02", 1100, "linear",
 
-					function ()
-					{
-						$( "#color-swap" ).attr( "title", 'Click here to install the "' + themes[ toggle ] + '" theme.' );
-					}
-				);
+						function ()
+						{
+							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes. Next up is: "' + themes[ toggle ] + '"' );
+						}
+					);
+				}
+				else
+				{
+					$( (".cw00") ).toggleClass( ("cw0" + toggle), 1100, "linear",
+
+						function ()
+						{
+							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes. Next up is: "' + themes[ toggle ] + '"' );
+						}
+					);
+				}
 			}
 		);
 	}
