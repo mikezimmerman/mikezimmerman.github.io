@@ -70,9 +70,11 @@ $( document ).ready(
 
 		// implement the color-transition animations on click of the "theme-selector" element.
 
-		var themes = [ "Deep Midnight Flamingo", "Blue Skies Above! (Vats of Bile Below)", "Last Place in the Middle School Science Fair ;-{", "Full Moon Over Malapascua Bay" ];
+		var themes = [ "Deep Midnight Flamingo", "Yunomi of Green Tea at Puget Sound", "Infrared Skies", "Fool's Gold", "Full Moon Over Malapascua Bay" ];
 		var toggle = 0;
 		var pretog;
+
+		$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes.\nCurrent theme: "' + themes[ themes.length - 1 ] + '"\nNext up: "' + themes[ toggle ] + '"' );
 
 		$( "#theme-selector" ).on( "click",
 
@@ -85,23 +87,40 @@ $( document ).ready(
 
 				// animate the theme-selector. (this was also the most efficient place to transition the headshots, when applicable.)
 
+				if ( toggle < ( themes.length - 1 ) ) // first n themes before last theme.
+				{
+					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "0" }, 700 );
+					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "15px" }, 700 );
+					$( "#ts-0" + ( toggle + 3 ) ).delay( 225 ).animate( { height: "7px" }, 700 );
+				}
+				else // final theme before start over.
+				{
+					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "0" }, 700 );
+
+					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "15px" }, 700,
+
+						function ()
+						{
+							$( this ).height( 0 );
+							$( "#ts-01" ).height( 15 );
+						}
+					);
+
+					$( "#ts-0" + ( toggle + 3 ) ).delay( 225 ).animate( { height: "7px" }, 700,
+
+						function ()
+						{
+							$( this ).height( 0 );
+							$( "#ts-02" ).height( 7 );
+						}
+					);
+				}
+
 				switch ( toggle )
 				{
-					case 0:
-
-						$( "#ts-01" ).delay( 225 ).animate( { height: "0" }, 700 );
-						$( "#ts-02" ).delay( 225 ).animate( { height: "15px" }, 700 );
-						$( "#ts-03" ).delay( 225 ).animate( { height: "7px" }, 700 );
-
-					break;
-
 					case 1:
 
 						$( "#hs-2" ).fadeIn( 1100 );
-
-						$( "#ts-02" ).delay( 225 ).animate( { height: "0" }, 700 );
-						$( "#ts-03" ).delay( 225 ).animate( { height: "15px" }, 700 );
-						$( "#ts-00" ).delay( 225 ).animate( { height: "7px" }, 700 );
 
 					break;
 
@@ -115,35 +134,23 @@ $( document ).ready(
 							}
 						);
 
-						$( "#ts-03" ).delay( 225 ).animate( { height: "0" }, 700 );
-						$( "#ts-00" ).delay( 225 ).animate( { height: "15px" }, 700 );
-						$( "#ts-01-2" ).delay( 225 ).animate( { height: "7px" }, 700 );
-
 					break;
 
 					case 3:
 
-						$( "#hs-3" ).fadeOut( 1100 );
-
-						$( "#ts-00" ).delay( 225 ).animate( { height: "0" }, 700 );
-
-						$( "#ts-01-2" ).delay( 225 ).animate( { height: "15px" }, 700, 
+						$( "#hs-4" ).fadeIn( 1100,
 
 							function ()
 							{
-								$( "#ts-01-2" ).height( 0 );
-								$( "#ts-01" ).height( 15 );
+								$( "#hs-3" ).css( "display", "none" );
 							}
 						);
 
-						$( "#ts-02-2" ).delay( 225 ).animate( { height: "7px" }, 700, 
+					break;
 
-							function ()
-							{
-								$( "#ts-02-2" ).height( 0 );
-								$( "#ts-02" ).height( 7 );
-							}
-						);
+					case 4:
+
+						$( "#hs-4" ).fadeOut( 1100 );
 
 					break;
 				}
@@ -153,7 +160,7 @@ $( document ).ready(
 
 				pretog = toggle;
 				++ toggle;
-				toggle = ( toggle !== 4 ? toggle : 0 );
+				toggle = ( toggle !== themes.length ? toggle : 0 );
 
 				$( "#link-s-" + pretog + ", #link-v-" + pretog ).fadeOut( 550,
 
@@ -176,13 +183,18 @@ $( document ).ready(
 
 				if ( ! toggle )
 				{
-					$( ".cw00" ).removeClass( "cw01" );
-					$( ".cw00" ).removeClass( "cw02" );
-					$( ".cw00" ).toggleClass( "cw03", 1100, "linear",
+					var c = 1;
+
+					for ( ; c < themes.length - 1; c ++ )
+					{
+						$( ".cw00" ).removeClass( "cw0" + c );
+					}
+
+					$( ".cw00" ).toggleClass( "cw0" + c, 1100, "linear",
 
 						function ()
 						{
-							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes. Next up is: "' + themes[ toggle ] + '"' );
+							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes.\nCurrent theme: "' + themes[ themes.length - 1 ] + '"\nNext up: "' + themes[ toggle ] + '"' );
 						}
 					);
 				}
@@ -192,7 +204,7 @@ $( document ).ready(
 
 						function ()
 						{
-							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes. Next up is: "' + themes[ toggle ] + '"' );
+							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes.\nCurrent theme: "' + themes[ toggle - 1 ] + '"\nNext up: "' + themes[ toggle ] + '"' );
 						}
 					);
 				}
