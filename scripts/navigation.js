@@ -89,29 +89,29 @@ $( document ).ready(
 
 				if ( toggle < ( themes.length - 1 ) ) // first n themes before last theme.
 				{
-					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "0" }, 700 );
-					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "15px" }, 700 );
-					$( "#ts-0" + ( toggle + 3 ) ).delay( 225 ).animate( { height: "7px" }, 700 );
+					$( "#ts-0" + ( toggle + 0 ) ).delay( 225 ).animate( { height: "0" }, 700 );
+					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "15px" }, 700 );
+					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "7px" }, 700 );
 				}
 				else // final theme before start over.
 				{
-					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "0" }, 700 );
+					$( "#ts-0" + ( toggle + 0 ) ).delay( 225 ).animate( { height: "0" }, 700 );
 
-					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "15px" }, 700,
+					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "15px" }, 700,
 
 						function ()
 						{
 							$( this ).height( 0 );
-							$( "#ts-01" ).height( 15 );
+							$( "#ts-00" ).height( 15 );
 						}
 					);
 
-					$( "#ts-0" + ( toggle + 3 ) ).delay( 225 ).animate( { height: "7px" }, 700,
+					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "7px" }, 700,
 
 						function ()
 						{
 							$( this ).height( 0 );
-							$( "#ts-02" ).height( 7 );
+							$( "#ts-01" ).height( 7 );
 						}
 					);
 				}
