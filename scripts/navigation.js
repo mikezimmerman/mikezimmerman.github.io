@@ -70,7 +70,7 @@ $( document ).ready(
 
 		// implement the color-transition animations on click of the "theme-selector" element.
 
-		var themes = [ "Deep Midnight Flamingo", "Yunomi of Green Tea at Puget Sound", "Silver Lake", "Fool's Gold", "Full Moon Over Malapascua Bay" ];
+		var themes = [ "Deep Midnight Flamingo", "Yunomi of Green Tea at Puget Sound", "Silver Lake", "Salmon Oshizushi on Mount Katmai", "Full Moon Over Malapascua Bay" ];
 		var toggle = 0;
 		var pretog;
 
