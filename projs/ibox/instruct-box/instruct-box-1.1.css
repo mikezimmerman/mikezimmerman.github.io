@@ -1,0 +1,149 @@
+/*///////  global table-elemens reset.
+*/
+
+table,
+th,
+tr,
+td
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-collapse: collapse;
+}
+
+
+
+/*///////  the ibox-specific styles.
+*/
+
+#ibox
+{
+	position: absolute;
+	left: 75px;
+	top: -350px; /* init. off-screen pos. to enable animation drop-in to it's correct pos. of 75px on page load. */
+	width: 270px;
+	height: 320px;
+}
+	.popLeft
+	{
+		left: 75px;
+		top: 75px;
+	}
+	.popRight
+	{
+		left: 679px;
+		top: 75px;
+	}
+
+a #ibox-btnLeft
+{
+	left: 8px;
+	top: 10px;
+	width: 32px;
+	height: 32px;
+	background-image: url( ../instruct-box/left_off.gif );
+}
+	a #ibox-btnLeft:hover
+	{
+		background-image: url( ../instruct-box/left_on.gif );
+	}
+
+a #ibox-btnRight
+{
+	left: 229px;
+	top: 10px;
+	width: 32px;
+	height: 32px;
+	background-image: url( ../instruct-box/right_off.gif );
+}
+	a #ibox-btnRight:hover
+	{
+		background-image: url( ../instruct-box/right_on.gif );
+	}
+
+
+#ibox-content
+{
+	left: 9px;
+	top: 50px;
+	width: 252px;
+	height: 212px;
+	overflow: hidden;
+}
+
+#ibox-instruct
+{
+	width: 100%;
+	height: 140px;
+	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#itbl-header
+{
+	height: 4px;
+}
+
+#itbl-label
+{
+	width: 2px;
+}
+
+.itxt
+{
+	margin: 6px;
+	padding: 6px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: normal;
+	color: #999999;
+}
+
+	.current
+	{
+		color: #000000;
+	}
+
+#ibox-feedback
+{
+	top: 140px;
+	width: 240px;
+	height: 66px;
+	border: 1px solid #990000;
+	border-width: 1px 0 0 0;
+	padding: 5px 5px 0 7px;
+	overflow: hidden;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #cc6600;
+}
+
+#ibox-controls
+{
+	left: 31px;
+	top: 270px;
+	width: 208px;
+	height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
