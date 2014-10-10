@@ -23,7 +23,7 @@ $( document ).ready(
 //    Event-Listeners.    //
 ////////////////////////////
 
-		var tglShowHide = 0;
+		var toggle = 0;
 
 		// attach click event-listener to "show/hide more info" button.
 
@@ -31,14 +31,14 @@ $( document ).ready(
 
 			function ( e )
 			{
-				switch ( tglShowHide )
+				switch ( toggle )
 				{
 					case 0:
 
 						$( "#built-with" ).fadeIn( 224, "linear" );
 						$( "#showHideInfo-show" ).fadeOut( 224, "linear" );
 						$( "#showHideInfo-hide" ).fadeIn( 224, "linear" );
-						++ tglShowHide;
+						++ toggle;
 
 					break;
 
@@ -47,7 +47,7 @@ $( document ).ready(
 						$( "#built-with" ).fadeOut( 175, "linear" );
 						$( "#showHideInfo-show" ).fadeIn( 175, "linear" );
 						$( "#showHideInfo-hide" ).fadeOut( 175, "linear" );
-						-- tglShowHide;
+						-- toggle;
 
 					break;
 				}
@@ -100,6 +100,46 @@ $( document ).ready(
 			}
 		);
 
+		function repositionTT( obj )
+		{
+			var winWidth  = $( window ).width();
+			var objLeft   = parseFloat( $( obj ).css( "left" ) );
+			var objWidth  = parseFloat( $( obj ).css( "width" ) );
+			var padRight  = winWidth - ( $( "#theme-selector" ).offset().left + $( "#theme-selector" ).width() );
+			var reposLeft = ( winWidth - objWidth - padRight ) + "px";
+			var reposTop  = ( $( "#theme-selector" ).offset().top + $( "#theme-selector" ).height() + 1 ) + "px";
+
+			if ( ( objLeft + objWidth ) >= winWidth )
+			{
+				$( "#ttip-themesel" ).css( { left: reposLeft, top: "0px" } );
+			}
+		};
+
+		$( "#theme-selector" ).hover( 
+
+			function ( e )
+			{
+				// position the tooltip.
+
+				$( "#ttip-themesel" ).css( { left: $( this ).offset().left + "px", top: $( this ).offset().top + "px" } );
+
+				// now fix if inside smartdevice "Menu" bar.
+
+				repositionTT( "#ttip-themesel" );
+
+				// display the tooltip.
+
+				$( "#ttip-themesel" ).fadeIn( 224 );
+			}
+			,
+
+			function ( e )
+			{
+				// display the tooltip.
+
+				$( "#ttip-themesel" ).fadeOut( 224 );
+			}
+		);
 
 ///////////////////
 //    Themes.    //
@@ -108,7 +148,8 @@ $( document ).ready(
 		// "globals".
 
 		var themes = [ "Deep Midnight Flamingo", "Yunomi of Green Tea at Puget Sound", "Silver Lake", "Salmon Oshizushi on Mount Katmai", "Full Moon Over Malapascua Bay" ];
-		var toggle = 0;
+		var itheme = 0;
+		var baseSpeed = 1050;
 
 		function toggleTransitions()
 		{
@@ -118,7 +159,8 @@ $( document ).ready(
 
 		// implement the color-transition animations on click of the "theme-selector" element.
 
-		$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes.\nCurrent theme: "' + themes[ themes.length - 1 ] + '"\nNext up: "' + themes[ toggle ] + '"' );
+		$( "#sThisTheme" ).html( themes[ themes.length - 1 ] );
+		$( "#sNextTheme" ).html( themes[ itheme ] );
 
 		$( "#theme-selector" ).on( "click",
 
@@ -131,17 +173,17 @@ $( document ).ready(
 
 				// animate the theme-selector.
 
-				if ( toggle < ( themes.length - 1 ) ) // first n themes before last theme.
+				if ( itheme < ( themes.length - 1 ) ) // first n themes before last theme.
 				{
-					$( "#ts-0" + ( toggle + 0 ) ).delay( 225 ).animate( { height: "0" }, 700 );
-					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "18px" }, 700 );
-					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "7px" }, 700 );
+					$( "#ts-0" + ( itheme + 0 ) ).delay( 225 ).animate( { height: "0" }, 700 );
+					$( "#ts-0" + ( itheme + 1 ) ).delay( 225 ).animate( { height: "18px" }, 700 );
+					$( "#ts-0" + ( itheme + 2 ) ).delay( 225 ).animate( { height: "7px" }, 700 );
 				}
 				else // final theme before start over.
 				{
-					$( "#ts-0" + ( toggle + 0 ) ).delay( 225 ).animate( { height: "0" }, 700 );
+					$( "#ts-0" + ( itheme + 0 ) ).delay( 225 ).animate( { height: "0" }, 700 );
 
-					$( "#ts-0" + ( toggle + 1 ) ).delay( 225 ).animate( { height: "18px" }, 700,
+					$( "#ts-0" + ( itheme + 1 ) ).delay( 225 ).animate( { height: "18px" }, 700,
 
 						function ()
 						{
@@ -150,7 +192,7 @@ $( document ).ready(
 						}
 					);
 
-					$( "#ts-0" + ( toggle + 2 ) ).delay( 225 ).animate( { height: "7px" }, 700,
+					$( "#ts-0" + ( itheme + 2 ) ).delay( 225 ).animate( { height: "7px" }, 700,
 
 						function ()
 						{
@@ -162,17 +204,17 @@ $( document ).ready(
 
 				// animate the "headshot" images.
 
-				switch ( toggle )
+				switch ( itheme )
 				{
 					case 0:
 
-						$( "#hs-1" ).fadeIn( 1100, toggleTransitions );
+						$( "#hs-1" ).fadeIn( baseSpeed, toggleTransitions );
 
 					break;
 
 					case 1:
 
-						$( "#hs-2" ).fadeIn( 1100,
+						$( "#hs-2" ).fadeIn( baseSpeed,
 
 							function ()
 							{
@@ -185,7 +227,7 @@ $( document ).ready(
 
 					case 2:
 
-						$( "#hs-3" ).fadeIn( 1100,
+						$( "#hs-3" ).fadeIn( baseSpeed,
 
 							function ()
 							{
@@ -198,7 +240,7 @@ $( document ).ready(
 
 					case 3:
 
-						$( "#hs-4" ).fadeIn( 1100,
+						$( "#hs-4" ).fadeIn( baseSpeed,
 
 							function ()
 							{
@@ -211,18 +253,18 @@ $( document ).ready(
 
 					case 4:
 
-						$( "#hs-4" ).fadeOut( 1100, toggleTransitions );
+						$( "#hs-4" ).fadeOut( baseSpeed, toggleTransitions );
 
 					break;
 				}
 
 				// primary theme fade-transitions (using jQueryUI)---this is all color and bgcolor (everything other than headshot imgs and theme selector).
 
-				++ toggle;
+				++ itheme;
 
-				toggle = ( toggle !== themes.length ? toggle : 0 );
+				itheme = ( itheme !== themes.length ? itheme : 0 );
 
-				if ( ! toggle )
+				if ( ! itheme )
 				{
 					var c = 1;
 
@@ -231,21 +273,45 @@ $( document ).ready(
 						$( ".theme00" ).removeClass( "theme0" + c );
 					}
 
-					$( ".theme00" ).toggleClass( "theme0" + c, 1100, "linear",
+					$( ".theme00" ).toggleClass( "theme0" + c, baseSpeed, "linear" );
+
+					$( "#sThisTheme" ).fadeOut( ( baseSpeed / 2 ),
 
 						function ()
 						{
-							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes.\nCurrent theme: "' + themes[ themes.length - 1 ] + '"\nNext up: "' + themes[ toggle ] + '"' );
+							$( "#sThisTheme" ).html( themes[ themes.length - 1 ] );
+							$( "#sThisTheme" ).fadeIn( baseSpeed / 2 );
+						}
+					);
+
+					$( "#sNextTheme" ).fadeOut( ( baseSpeed / 2 ),
+
+						function ()
+						{
+							$( "#sNextTheme" ).html( themes[ itheme ] );
+							$( "#sNextTheme" ).fadeIn( baseSpeed / 2 );
 						}
 					);
 				}
 				else
 				{
-					$( ( ".theme00" ) ).toggleClass( ("theme0" + toggle), 1100, "linear",
+					$( ( ".theme00" ) ).toggleClass( ( "theme0" + itheme ), baseSpeed, "linear" );
+
+					$( "#sThisTheme" ).fadeOut( ( baseSpeed / 2 ),
 
 						function ()
 						{
-							$( "#theme-selector" ).attr( "title", 'Click here to rotate through themes.\nCurrent theme: "' + themes[ toggle - 1 ] + '"\nNext up: "' + themes[ toggle ] + '"' );
+							$( "#sThisTheme" ).html( themes[ itheme - 1 ] );
+							$( "#sThisTheme" ).fadeIn( baseSpeed / 2 );
+						}
+					);
+
+					$( "#sNextTheme" ).fadeOut( ( baseSpeed / 2 ),
+
+						function ()
+						{
+							$( "#sNextTheme" ).html( themes[ itheme ] );
+							$( "#sNextTheme" ).fadeIn( baseSpeed / 2 );
 						}
 					);
 				}
