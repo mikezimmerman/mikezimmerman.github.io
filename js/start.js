@@ -8,15 +8,9 @@ $( document ).ready(
 
 		// fade-in all of the text to avoid FOUT.
 
-		$( ".fadein" ).delay( 175 ).each( 
+		$( ".fadein" ).delay( 224 ).css( { opacity: 0.0, visibility: "visible" } ).animate( { opacity: 1.0 }, 525, "linear" );
 
-			function ()
-			{
-				$( this ).css( { opacity: 0.0, visibility: "visible" } ).animate( { opacity: 1.0 }, "slow", "linear" );
-			}
-		);
-
-		$( "#showHideInfo-show" ).delay( 775 ).fadeIn( "slow", "linear" );
+		$( "#showHideInfo-show" ).delay( 637 ).fadeIn( 525, "linear" );
 
 
 ////////////////////////////
@@ -73,30 +67,24 @@ $( document ).ready(
 			}
 		);
 
-		// nav-bar section-anchor/tooltip-displaying buttons.
+		// prep the "Experience"/"Expertise" top-nav links to display tooltips and navigrate to corresponding sections.
 
-		$( "a[ data-show-tt ]" ).each( 
+		$( "a[ data-show-tt ]" ).on( "click",
 
-			function ()
+			function ( e )
 			{
-				$( this ).on( "click",  
+				// first, only if the target sect. is not visible, scroll to it.
 
-					function ( e )
-					{
-						// first, only if the target sect. is not visible, scroll to it.
+				var anchor = "#" + this.innerText.toLowerCase();
 
-						var anchor = "#" + this.innerText.toLowerCase();
+				if ( ! $( anchor ).visible() )
+				{
+					$( "html, body" ).animate( { scrollTop: $( anchor ).offset().top }, "slow" );
+				}
 
-						if ( ! $( anchor ).visible() )
-						{
-							$( "html, body" ).animate( { scrollTop: $( anchor ).offset().top }, "slow" );
-						}
+				// secondly, regardless, display a tooltip about it.
 
-						// secondly, regardless, display a tooltip about it.
-
-						$( "#ttip-" + this.innerText.toLowerCase() ).fadeIn( "slow" ).delay( 2720 ).fadeOut( "slow" );
-					}
-				);
+				$( "#ttip-" + this.innerText.toLowerCase() ).fadeIn( "slow" ).delay( 2720 ).fadeOut( "slow" );
 			}
 		);
 
@@ -114,6 +102,8 @@ $( document ).ready(
 				$( "#ttip-themesel" ).css( { left: reposLeft, top: "0px" } );
 			}
 		};
+
+		// "These Selector"-widget's tooltip.
 
 		$( "#theme-selector" ).hover( 
 
